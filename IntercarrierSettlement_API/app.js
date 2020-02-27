@@ -11,7 +11,7 @@ app.get('/cdrdispute/:op', (req, res) => {
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
-            docType: { "$eq": "CDR_DISPUTE"},
+            docType: { "$eq": "CDR_Dispute"},
             opname : { "$eq": operator }
         }       
       };
@@ -29,7 +29,7 @@ app.get('/cdrdispute/:op/:date', (req, res) => {
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
-            docType: { "$eq": "CDR_DISPUTE"},
+            docType: { "$eq": "CDR_Dispute"},
             opname : { "$eq": operator },
             loadDate:{"$eq":date}
         }       
