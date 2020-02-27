@@ -6,7 +6,7 @@ app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/cdrdispute/:op', (req, res) => {
     var operator=req.params.op
-    const nano = require('nano')('http://54.210.230.187:9984/');
+    const nano = require('nano')('http://52.90.135.137:5984/');
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
@@ -24,7 +24,7 @@ app.get('/cdrdispute/:op', (req, res) => {
 app.get('/cdrdispute/:op/:date', (req, res) => {
     var operator=req.params.op
     var date=req.params.date
-    const nano = require('nano')('http://54.210.230.187:9984/');
+    const nano = require('nano')('http://52.90.135.137:5984/');
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
@@ -41,7 +41,7 @@ app.get('/cdrdispute/:op/:date', (req, res) => {
 })
 app.get('/cdrreport/:op', (req, res) => {
     var operator=req.params.op
-    const nano = require('nano')('http://54.210.230.187:9984/');
+    const nano = require('nano')('http://52.90.135.137:5984/');
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
@@ -58,7 +58,7 @@ app.get('/cdrreport/:op', (req, res) => {
 app.get('/cdrreport/:op/:date', (req, res) => {
     var operator=req.params.op
     var date=req.params.date
-    const nano = require('nano')('http://54.210.230.187:9984/');
+    const nano = require('nano')('http://52.90.135.137:5984/');
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
@@ -76,7 +76,7 @@ app.get('/cdrreport/:op/:date', (req, res) => {
 app.get('/cdrreport/month/:op/:month', (req, res) => {
     var operator=req.params.op
     var month=req.params.month
-    const nano = require('nano')('http://54.210.230.187:9984/');
+    const nano = require('nano')('http://52.90.135.137:5984/');
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
