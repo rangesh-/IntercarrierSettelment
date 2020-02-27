@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-
+app.use(cors());
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/cdrdispute/:op', (req, res) => {
@@ -10,8 +10,8 @@ app.get('/cdrdispute/:op', (req, res) => {
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
-            DOCType: { "$eq": "CDR_DISPUTE"},
-            Operator : { "$eq": operator }
+            docType: { "$eq": "CDR_DISPUTE"},
+            opname : { "$eq": operator }
         }       
       };
       console.log(q);
@@ -28,9 +28,9 @@ app.get('/cdrdispute/:op/:date', (req, res) => {
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
-            DOCType: { "$eq": "CDR_DISPUTE"},
-            Operator : { "$eq": operator },
-            LoadDate:{"$eq":date}
+            docType: { "$eq": "CDR_DISPUTE"},
+            opname : { "$eq": operator },
+            loadDate:{"$eq":date}
         }       
       };
       console.log(q);
@@ -45,8 +45,8 @@ app.get('/cdrreport/:op', (req, res) => {
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
-            DOCTYPE: { "$eq": "REPORT"},
-            Operator : { "$eq": operator }
+            docType: { "$eq": "REPORT"},
+            opname : { "$eq": operator }
         }       
       };
       console.log(q);
@@ -62,9 +62,9 @@ app.get('/cdrreport/:op/:date', (req, res) => {
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
-            DOCTYPE: { "$eq": "REPORT"},
-            Operator : { "$eq": operator },
-            LoadDate:{"$eq":date}
+            docType: { "$eq": "REPORT"},
+            opname : { "$eq": operator },
+            loadDate:{"$eq":date}
         }       
       };
       console.log(q);
@@ -75,14 +75,14 @@ app.get('/cdrreport/:op/:date', (req, res) => {
 })
 app.get('/cdrreport/month/:op/:month', (req, res) => {
     var operator=req.params.op
-    var month=req.params.month
+    var months=req.params.month
     const nano = require('nano')('http://52.90.135.137:5984/');
     const db = nano.db.use('mychannel_cdr');
     const q = {
         selector: {
-            DOCTYPE: { "$eq": "REPORT"},
-            Operator : { "$eq": operator },
-            Month:{"$eq":month}
+            docType: { "$eq": "REPORT"},
+            opname : { "$eq": operator },
+            month:{"$eq":months}
         }       
       };
       console.log(q);
