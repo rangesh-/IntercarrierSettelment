@@ -12,17 +12,17 @@
                           <div class="row">
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Partner CDR Exchange API" type="text">
+                                  <input matInput placeholder="Partner CDR Exchange API" type="text" name="hashCode" [(ngModel)]="hashCode">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-4">
                                 <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Operator Name" type="text">
+                                  <input matInput placeholder="Operator Name" type="text" name="operatorName" [(ngModel)]="operatorName">
                                 </mat-form-field>
                               </div>
                               
                           </div>                          
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Start Job</button>
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="invokeAPI()">Start Job</button>
                           <div class="clearfix"></div>
                       </form>
                   </div>

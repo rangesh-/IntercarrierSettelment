@@ -14,10 +14,17 @@ export class NavbarComponent implements OnInit {
       mobile_menu_visible: any = 0;
     private toggleButton: any;
     private sidebarVisible: boolean;
+    oprName: string;
 
     constructor(location: Location,  private element: ElementRef, private router: Router) {
       this.location = location;
           this.sidebarVisible = false;
+          if(localStorage.getItem("operator") === null){
+            this.oprName = "OP_A";
+            localStorage.setItem("operator", "OP_A");
+          }else{
+            this.oprName =localStorage.getItem("operator");
+          }
     }
 
     ngOnInit(){
@@ -121,5 +128,9 @@ export class NavbarComponent implements OnInit {
           }
       }
       return 'Dashboard';
+    }
+
+    changeOpr(){
+        console.log(this.oprName);
     }
 }

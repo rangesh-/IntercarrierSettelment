@@ -49,4 +49,16 @@ export class ApiService {
     // console.log(filterArray);
     return values;
   }
+
+  getInvokeAPI(operator : string,hashcode: string){
+    this.httpClient.get(this.hostUrl+"/batch?op="+hashcode +"&name="+operator).subscribe(
+      res => {
+        console.log(res);
+        alert("Invoke API for" + operator);
+      },error => {
+        alert("Error in Invoke API for" + operator);
+        console.log(error);
+      }
+    );
+  }
 }

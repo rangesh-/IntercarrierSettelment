@@ -29,7 +29,7 @@ import { ApiService } from './service/api.service';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule    ,
+    HttpClientModule,
     ComponentsModule,
     RouterModule,
     AppRoutingModule
