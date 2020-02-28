@@ -14,7 +14,9 @@ export class DashboardComponent implements OnInit {
   operator: string;
 
   constructor(private apiCall : ApiService) { 
-    localStorage.setItem("operator", "OP_A");
+    if(localStorage.getItem("operator") === null){
+      localStorage.setItem("operator", "OP_A");
+    }
     this.dailymetrics = {
       minutes: 0,
       revenue: 0,

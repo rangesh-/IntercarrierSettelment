@@ -14,6 +14,9 @@ export class TableListComponent implements OnInit {
 
   constructor(private apiService: ApiService) {
     this.cdrs = [];
+    if(localStorage.getItem("operator") === null){
+      localStorage.setItem("operator", "OP_A");
+    }
     
    }
 
