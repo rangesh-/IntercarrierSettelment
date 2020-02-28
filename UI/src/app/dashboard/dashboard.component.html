@@ -1,0 +1,127 @@
+<!-- https://www.creative-tim.com/product/material-dashboard-angular2?partner=114912 -->
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-warning card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">timer</i>
+                      </div>
+                      <p class="card-category">Usage Minutes</p>
+                      <h3 class="card-title">{{dailymetrics.minutes}}
+                          <!-- <small>mins</small> -->
+                      </h3>
+                  </div>
+                  <!-- <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons text-danger">warning</i>
+                          <a href="javascript:void(0)">Get More Space...</a>
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">store</i>
+                      </div>
+                      <p class="card-category">Revenue</p>
+                      <h3 class="card-title">${{dailymetrics.revenue}}</h3>
+                  </div>
+                  <!-- <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">date_range</i> Last 24 Hours
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-danger card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">info_outline</i>
+                      </div>
+                      <p class="card-category">Issues Raised</p>
+                      <h3 class="card-title">{{dailymetrics.issues_count}}</h3>
+                  </div>
+                  <!-- <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">local_offer</i> Tracked from Github
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                  <div class="card-header card-header-info card-header-icon">
+                      <div class="card-icon">
+                          <i class="material-icons">insert_drive_file</i>
+                      </div>
+                      <p class="card-category"># of CDR's</p>
+                      <h3 class="card-title">{{dailymetrics.cdr_count}}</h3>
+                  </div>
+                  <!-- <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">update</i> Just Updated
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="card card-chart">
+                  <div class="card-header card-header-success">
+                      <div class="ct-chart" id="dailySalesChart"></div>
+                  </div>
+                  <div class="card-body">
+                      <h4 class="card-title">Issue Trend</h4>
+                      <p class="card-category">
+                          <!-- <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p> -->
+                          Disputes raised post smart contract evaluvation
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">access_time</i> Weekly report
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="card card-chart">
+                  <div class="card-header card-header-warning">
+                      <div class="ct-chart" id="websiteViewsChart"></div>
+                  </div>
+                  <div class="card-body">
+                      <h4 class="card-title">Call Type</h4>
+                      <p class="card-category">Different call types </p>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">access_time</i> as per today
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- <div class="col-md-4">
+              <div class="card card-chart">
+                  <div class="card-header card-header-danger">
+                      <div class="ct-chart" id="completedTasksChart"></div>
+                  </div>
+                  <div class="card-body">
+                      <h4 class="card-title">Completed Tasks</h4>
+                      <p class="card-category">Last Campaign Performance</p>
+                  </div>
+                  <div class="card-footer">
+                      <div class="stats">
+                          <i class="material-icons">access_time</i> campaign sent 2 days ago
+                      </div>
+                  </div>
+              </div>
+          </div> -->
+      </div>
+      
+  </div>
+</div>
