@@ -56,8 +56,8 @@ export class ApiService {
         console.log(res);
         alert("Invoke API for" + operator);
       },error => {
-        alert("Error in Invoke API for" + operator);
-        console.log(error);
+        //alert("Error in Invoke API for" + operator);
+        console.error(error);
       }
     );
   }
