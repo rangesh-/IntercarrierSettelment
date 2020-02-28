@@ -19,12 +19,7 @@ export class NavbarComponent implements OnInit {
     constructor(location: Location,  private element: ElementRef, private router: Router) {
       this.location = location;
           this.sidebarVisible = false;
-          if(localStorage.getItem("operator") === null){
-            this.oprName = "OP_A";
-            localStorage.setItem("operator", "OP_A");
-          }else{
-            this.oprName =localStorage.getItem("operator");
-          }
+          
     }
 
     ngOnInit(){
@@ -39,6 +34,13 @@ export class NavbarComponent implements OnInit {
            this.mobile_menu_visible = 0;
          }
      });
+
+     if(localStorage.getItem("operator") === null){
+        this.oprName = "OP_A";
+        localStorage.setItem("operator", "OP_A");
+      }else{
+        this.oprName =localStorage.getItem("operator");
+      }
     }
 
     sidebarOpen() {
@@ -130,7 +132,10 @@ export class NavbarComponent implements OnInit {
       return 'Dashboard';
     }
 
-    changeOpr(){
+    changeOpr(operator){
+        this.oprName = operator;
         console.log(this.oprName);
+        localStorage.setItem("operator", this.oprName);
+        window.location.reload();
     }
 }

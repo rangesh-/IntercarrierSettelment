@@ -85,7 +85,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
       let today = new Date();
-      let date = this.apiCall.padZero((today.getMonth()+1)+"",2)+"-"+(today.getDate()-1) +"-"+today.getFullYear();
+      let date = this.apiCall.padZero((today.getMonth()+1)+"",2)+"-"+(today.getDate()) +"-"+today.getFullYear();
       //get opr from local storage;
       this.operator = localStorage.getItem("operator");
       this.apiCall.getReportByOprAndDate(this.operator,date).subscribe(response => {
