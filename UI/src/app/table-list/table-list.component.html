@@ -4,8 +4,7 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header card-header-danger">
-                      <h4 class="card-title ">Simple Table</h4>
-                      <p class="card-category"> Here is a subtitle for this table</p>
+                      <h4 class="card-title ">CDR Disputes </h4>
                   </div>
                   <div class="card-body">
                       <div class="table-responsive">
@@ -16,10 +15,10 @@
                                       Oraclize #
                                   </th>
                                   <th>
-                                      Called #
+                                      Subscriber 
                                   </th>
                                   <th>
-                                      Call #
+                                      Receiver 
                                   </th>
                                   <th>
                                       Call Type
@@ -35,8 +34,8 @@
                                   <!-- //[routerLink]="['/transfer']" [queryParams]="{ id: transfer.id }" -->
                                 <tr *ngFor="let cdr of cdrs" >
                                     <td>{{cdr.proof}}</td>
-                                    <td>{{cdr.callednum}}</td>
-                                    <td>{{cdr.callnum}}</td>
+                                    <td>{{ (cdr.callednum==0) ? '-':cdr.callednum}}</td>
+                                    <td>{{ (cdr.callnum==0) ?'-':cdr.callnum}}</td>
                                     <td>{{cdr.calltype}}</td>
                                     <td>{{cdr.charge}}</td>
                                     <td>{{cdr.loadDate}}</td>
