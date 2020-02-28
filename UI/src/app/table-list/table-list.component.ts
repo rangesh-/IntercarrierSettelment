@@ -21,8 +21,10 @@ export class TableListComponent implements OnInit {
    }
 
   ngOnInit() {
+    let today = new Date();
+    let date = this.apiService.padZero((today.getMonth()+1)+"",2)+"-"+(today.getDate()) +"-"+today.getFullYear();
     this.operator = localStorage.getItem("operator");
-    this.apiService.getAllCdrDisputeByOpr(this.operator).subscribe(res =>{
+    this.apiService.getAllCdrDisputeByOprAndDate(this.operator,date).subscribe(res =>{
       this.cdrs = res['docs'];
     }, error => {
       console.log("Error");
