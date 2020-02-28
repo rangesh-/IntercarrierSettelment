@@ -33,7 +33,7 @@
                               <tbody>
                                   <!-- //[routerLink]="['/transfer']" [queryParams]="{ id: transfer.id }" -->
                                 <tr *ngFor="let cdr of cdrs" >
-                                    <td>{{cdr.proof}}</td>
+                                    <td><a href="https://app.provable.xyz/home/check_query?id="{{cdr.proof}}>{{cdr.proof}}</a></td>
                                     <td>{{ (cdr.callednum==0) ? '-':cdr.callednum}}</td>
                                     <td>{{ (cdr.callnum==0) ?'-':cdr.callnum}}</td>
                                     <td>{{cdr.calltype}}</td>
