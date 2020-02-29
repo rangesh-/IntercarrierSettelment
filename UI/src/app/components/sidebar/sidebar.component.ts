@@ -25,11 +25,19 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
+  oprName: string;
 
   constructor() { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+
+    if(localStorage.getItem("operator") === null){
+      this.oprName = "OP_A";
+      localStorage.setItem("operator", "OP_A");
+    }else{
+      this.oprName =localStorage.getItem("operator");
+    }
   }
   isMobileMenu() {
       if ($(window).width() > 991) {
@@ -37,4 +45,11 @@ export class SidebarComponent implements OnInit {
       }
       return true;
   };
+
+  changeOpr(operator){
+    this.oprName = operator;
+    console.log(this.oprName);
+    localStorage.setItem("operator", this.oprName);
+    window.location.reload();
+  }
 }
