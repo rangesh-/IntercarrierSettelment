@@ -8,7 +8,13 @@
 </div>
 <div class="sidebar-wrapper">
   <div *ngIf="isMobileMenu()">
-    <form class="navbar-form">
+
+    <button class="btn" [ngClass]="{'btn-primary':oprName === 'OP_A',
+    'btn-default':oprName !== 'OP_A'}" (click)="changeOpr('OP_A')">Operator A</button>
+
+    <button class="btn" [ngClass]="{'btn-primary':oprName === 'OP_B',
+    'btn-default':oprName !== 'OP_B'}" (click)="changeOpr('OP_B')">Operator B</button>
+    <!--form class="navbar-form">
       <span class="bmd-form-group">
         <div class="input-group no-border">
           <input type="text" value="" class="form-control" placeholder="Search...">
@@ -52,7 +58,7 @@
                 </p>
             </a>
         </li>
-    </ul>
+    </ul-->
   </div>
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
